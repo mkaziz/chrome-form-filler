@@ -1,11 +1,11 @@
 {
   "manifest_version" : 2,
   "name" : "Form Filler",
-  "description" : "Use CSS selectors to fill forms!"
-  "version : "1.0",
+  "description" : "Use CSS selectors to fill forms!",
+  "version" : "1.0",
   
   "permissions" : [
-    "http://www.metoperafamily.org"  
+    "http://www.metoperafamily.org/*"  
   ],
   
   "browser_action" : {
