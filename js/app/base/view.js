@@ -10,7 +10,7 @@ define([
     viewModel: {},
     
     template : function () {
-      return Handlebars.compile($(this.templateSelector));
+      return Handlebars.compile($(this.templateSelector).html());
     },
     
     render: function () {

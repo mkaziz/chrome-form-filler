@@ -6,7 +6,9 @@ define([
   
     initialize: function (opts) {
       alert("did init viewmodel");
-    }
+      this.render();
+    },
     
+    templateSelector: '#viewModelTemplate'
   });
 });
