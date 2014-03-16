@@ -1,11 +1,12 @@
 define([
-  'backbone'
-], function (Backbone) {
+  'app/base/view'
+], function (BaseView) {
 
-  return Backbone.View.extend({
+  return BaseView.extend({
   
     initialize: function (opts) {
       alert("did init viewmodel");
     }
+    
   });
 });

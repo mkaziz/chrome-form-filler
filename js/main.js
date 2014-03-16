@@ -15,6 +15,9 @@ requirejs.config({
     },
     'jquery' : {
       exports: "$"
+    },
+    'handlebars': {
+        exports: 'Handlebars'
     }
   }
 
@@ -24,9 +27,10 @@ requirejs([
   'jquery',
   'underscore',
   'backbone',
+  'handlebars',
   'app/viewModel'
   
-], function ($, _, Backbone, App) {
+], function ($, _, Backbone, Handlebars, App) {
   
   this.app = window.app = new App({ el : $("#viewModelContainer") });
 
