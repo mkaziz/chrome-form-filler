@@ -7,13 +7,27 @@
   </head>
   <body>
   </body>
-    <div id="viewModelContainer"></div>
     <div id="handlebarsContainer" style="display:none;">
-    
-      <div id="viewModelTemplate">
-        <h2>CSS Form Filler</h2>
-      </div>
+
+      <script type="text/x-handlebars-template" id="fieldCollectionViewTemplate">
+        
+        {{#each fieldCollection}}
+          <div class="field">
+            <input type="text" class="cssSelector" value="{{this.cssSelector}}"></input>
+            <input type="text" class="defaultValue" value="{{this.defaultValue}}"></input>
+          </div>
+        {{/each}}
+        
+        <input type="button" id="addNewField" value="Add New Field"></input>
+      </script>
     
     </div>
+    
+    <div id="viewModelContainer">
+      <h2>CSS Form Filler</h2>
+      
+      <div id=fieldCollectionViewContainer></div>
+    </div>
+    
     <script data-main="js/main.js" src="js/lib/require.js"></script>
 </html>

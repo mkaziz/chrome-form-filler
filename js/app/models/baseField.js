@@ -5,7 +5,7 @@ define([
   return BaseModel.extend({
     defaults: {
       cssSelector: '',
-      defaultValue: '',
+      value: '',
       override: false,
       type: 'text'
     },
@@ -13,10 +13,11 @@ define([
     initialize: function(opts) {
       if (!!opts) {
         this.cssSelector = opts.cssSelector;
-        this.defaultValue = opts.defaultValue;
+        this.value = opts.value;
         this.override = opts.override;
-        this.type = opts.type;
+        this.type=opts.type;
       }
     }
   });
-});
+
+}

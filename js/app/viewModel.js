@@ -1,14 +1,30 @@
 define([
-  'app/base/view'
-], function (BaseView) {
+  'app/base/view',
+  'app/collections/fieldCollection',
+  'app/views/fieldCollectionView'
+], function (BaseView, FieldCollection, FieldCollectionView) {
 
   return BaseView.extend({
   
     initialize: function (opts) {
-      alert("did init viewmodel");
+    
+      this.fieldCollection = new FieldCollection();
+      this.fieldCollectionView = new FieldCollectionView({
+        fieldCollection: this.fieldCollection,
+        el: $("#fieldCollectionViewContainer")
+      });
+      this.bindEvents();
       this.render();
     },
     
-    templateSelector: '#viewModelTemplate'
+    templateSelector: '#viewModelTemplate',
+    
+    render : function () {
+      this.fieldCollectionView.render();
+    },
+    
+    bindEvents: function() {
+
+    }
   });
 });

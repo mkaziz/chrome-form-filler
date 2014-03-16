@@ -7,14 +7,21 @@ define([
   
     templateSelector: '',
 
-    viewModel: {},
+    viewModel: function () {
+      return {
+      
+      }
+    },
     
     template : function () {
       return Handlebars.compile($(this.templateSelector).html());
     },
     
     render: function () {
-      this.$el.html(this.template($(this.viewModel)));
+      var templateFunction = this.template();
+      console.log({ selector: this.templateSelector, viewModel: this.viewModel(), template: templateFunction(this.viewModel()) });
+      this.$el.html(templateFunction( this.viewModel()));
+      //console.log(this.$el.html());
     }
    
   });
